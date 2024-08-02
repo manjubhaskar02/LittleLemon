@@ -25,7 +25,7 @@ const Main = () => {
   const submitForm = (formData) => {
     if (submitAPI(formData)) {
       localStorage.setItem('bookingData', JSON.stringify(formData));
-      navigate('/confirmed');
+      navigate('/LittleLemon/confirmed');
     } else {
       console.error('Failed to submit the booking');
     }
@@ -35,10 +35,10 @@ const Main = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
-        <Route path="/confirmed" element={<ConfirmedBooking />} />
-        <Route path='/form' element={<Login />} />
+        <Route path="/LittleLemon" element={<Homepage />} />
+        <Route path="/LittleLemon/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
+        <Route path="/LittleLemon/confirmed" element={<ConfirmedBooking />} />
+        <Route path='/LittleLemon/form' element={<Login />} />
       </Routes>
       <Footer />
     </>

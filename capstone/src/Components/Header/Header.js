@@ -38,13 +38,13 @@ function Header() {
                 <nav className={`nav ${isOpen ? 'nav-open' : ''}`}>
 
                     <ul className="nav-list">
-                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/LittleLemon">Home</Link></li>
                         <li>  <a href="#about" onClick={handleClick}>About</a></li>
 
                         <li> <a href="#menu" onClick={handleClick}>Menu</a></li>
-                        <li><Link to="/booking">Reservations</Link></li>
-                        <li><Link to="/">Order Online</Link></li>
-                        <li><Link to="/form">Login</Link></li>
+                        <li><Link to="/LittleLemon/booking">Reservations</Link></li>
+                        <li><Link to="/LittleLemon">Order Online</Link></li>
+                        <li><Link to="/LittleLemon/form">Login</Link></li>
                     </ul>
                 </nav>
 

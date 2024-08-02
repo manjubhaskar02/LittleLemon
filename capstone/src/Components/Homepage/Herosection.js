@@ -7,7 +7,7 @@ function Herosection() {
     const navigate = useNavigate();
 
     const handleReserveClick = () => {
-        navigate('/booking');
+        navigate('/LittleLemon/booking');
     };
 
     return (
