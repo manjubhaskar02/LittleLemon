@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Capstone-Project/static/css/main.208abe3d.css",
-    "main.js": "/Capstone-Project/static/js/main.538f3d27.js",
-    "static/js/453.6fc33b34.chunk.js": "/Capstone-Project/static/js/453.6fc33b34.chunk.js",
-    "static/media/Mario and Adrian A.jpg": "/Capstone-Project/static/media/Mario and Adrian A.7f44c6d6e341a27d14b3.jpg",
-    "static/media/Mario and Adrian b.jpg": "/Capstone-Project/static/media/Mario and Adrian b.6ba0e06bfa9c1ea75109.jpg",
-    "static/media/restaurant chef B.jpg": "/Capstone-Project/static/media/restaurant chef B.4b4c2d26b514db32e8fc.jpg",
-    "static/media/greek salad.jpg": "/Capstone-Project/static/media/greek salad.bed423a1fab5b210e347.jpg",
-    "static/media/restauranfood.jpg": "/Capstone-Project/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
-    "static/media/restaurant.jpg": "/Capstone-Project/static/media/restaurant.77cd711a409a7a84ce7a.jpg",
-    "static/media/fish.jpg": "/Capstone-Project/static/media/fish.fc55a1376b0793713a51.jpg",
-    "static/media/BruschettaP.jpg": "/Capstone-Project/static/media/BruschettaP.59eb4a17a4b8b5e54240.jpg",
-    "static/media/Copyright-logo.png": "/Capstone-Project/static/media/Copyright-logo.215df87837073a73cb27.png",
-    "index.html": "/Capstone-Project/index.html",
-    "main.208abe3d.css.map": "/Capstone-Project/static/css/main.208abe3d.css.map",
-    "main.538f3d27.js.map": "/Capstone-Project/static/js/main.538f3d27.js.map",
-    "453.6fc33b34.chunk.js.map": "/Capstone-Project/static/js/453.6fc33b34.chunk.js.map"
+    "main.css": "/LittleLemon/static/css/main.d1e22577.css",
+    "main.js": "/LittleLemon/static/js/main.0018b908.js",
+    "static/js/453.6fc33b34.chunk.js": "/LittleLemon/static/js/453.6fc33b34.chunk.js",
+    "static/media/Mario and Adrian A.jpg": "/LittleLemon/static/media/Mario and Adrian A.7f44c6d6e341a27d14b3.jpg",
+    "static/media/Mario and Adrian b.jpg": "/LittleLemon/static/media/Mario and Adrian b.6ba0e06bfa9c1ea75109.jpg",
+    "static/media/restaurant chef B.jpg": "/LittleLemon/static/media/restaurant chef B.4b4c2d26b514db32e8fc.jpg",
+    "static/media/greek salad.jpg": "/LittleLemon/static/media/greek salad.bed423a1fab5b210e347.jpg",
+    "static/media/restauranfood.jpg": "/LittleLemon/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
+    "static/media/restaurant.jpg": "/LittleLemon/static/media/restaurant.77cd711a409a7a84ce7a.jpg",
+    "static/media/fish.jpg": "/LittleLemon/static/media/fish.fc55a1376b0793713a51.jpg",
+    "static/media/BruschettaP.jpg": "/LittleLemon/static/media/BruschettaP.59eb4a17a4b8b5e54240.jpg",
+    "static/media/Copyright-logo.png": "/LittleLemon/static/media/Copyright-logo.215df87837073a73cb27.png",
+    "index.html": "/LittleLemon/index.html",
+    "main.d1e22577.css.map": "/LittleLemon/static/css/main.d1e22577.css.map",
+    "main.0018b908.js.map": "/LittleLemon/static/js/main.0018b908.js.map",
+    "453.6fc33b34.chunk.js.map": "/LittleLemon/static/js/453.6fc33b34.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.208abe3d.css",
-    "static/js/main.538f3d27.js"
+    "static/css/main.d1e22577.css",
+    "static/js/main.0018b908.js"
   ]
 }
