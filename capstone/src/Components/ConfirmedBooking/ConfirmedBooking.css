@@ -1,0 +1,81 @@
+.confirm-booking {
+    background-color: var(--primary-color);
+    padding: var(--padding-lg);
+    position: relative;
+    background: url('../../images/restauranfood.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.confirm-booking::before {
+    content: '';
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(73, 94, 87, 0.6);
+
+    /* background-color: rgba(73, 94, 87, 0.6); */
+    /* filter: blur(8px); */
+
+    /* z-index: 1; */
+}
+
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 2em;
+    padding: 2em;
+    border-radius: .4em;
+    z-index: 2;
+}
+
+
+.confirm-booking h2 {
+    position: relative;
+    color: var(--secondary-color);
+    /* z-index: 2; */
+}
+
+.booking-data {
+    display: grid;
+    place-items: center;
+    color: #fcfcfc;
+    font-size: 1.2em;
+}
+
+.list-items {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2.5em 4em;
+}
+
+li {
+    display: flex;
+    gap: 1.5em;
+}
+
+.seating {
+    text-align: center;
+    padding: 2em 2em 0;
+}
+
+.success-message {
+    color: #fcfcfc;
+    position: relative;
+    font-size: 2em;
+    text-align: center;
+    /* background-color: #fcfcfc; */
+    background-color: rgba(73, 94, 87, 0.6);
+    /* background-color: rgba(0, 0, 0, 0.6); */
+
+    padding: 2em;
+    border-radius: 10px;
+    /* z-index: 2; */
+
+
+}

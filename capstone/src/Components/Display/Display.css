@@ -1,0 +1,20 @@
+.display-section {
+    padding: var(--padding-lg);
+}
+
+.image-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, auto);
+
+}
+
+.image-grid img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+
+
+}

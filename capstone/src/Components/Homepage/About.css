@@ -1,0 +1,51 @@
+.about {
+    padding: var(--padding-lg);
+}
+
+
+.about-content {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    width: 60%;
+    font-family: var(--karla-text);
+}
+
+.overlap {
+    position: absolute;
+    right: 10em;
+    bottom: 1em;
+}
+
+.about-image {
+    height: 700px;
+}
+
+@media (max-width: 1500px) {
+    .about-content {
+
+        width: 70%;
+    }
+
+    .about-image img {
+        width: 400px;
+        height: 400px;
+    }
+
+
+}
+
+@media (max-width: 1050px) {
+    .about {
+        padding: var(--padding-sm);
+    }
+
+    .overlap {
+        display: none;
+    }
+
+    .about-content {
+        font-size: 1em;
+        width: 100%;
+    }
+
+}

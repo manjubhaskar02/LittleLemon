@@ -1,0 +1,21 @@
+.footer-content {
+    padding: var(--padding-lg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    background-color: var(--light-bg-color);
+
+}
+
+@media(max-width:1050px) {
+    .footer-content {
+        padding: var(--padding-sm);
+
+    }
+}
+
+@media(max-width:500px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    }
+}

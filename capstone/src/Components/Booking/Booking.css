@@ -1,0 +1,220 @@
+.form {
+    background-color: var(--primary-color);
+    padding: var(--padding-lg);
+}
+
+
+.form h2 {
+    color: var(--secondary-color);
+}
+
+
+.form-input {
+    padding: 3em 0em;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem 8rem;
+    place-content: center;
+
+
+}
+
+.seating-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* BookingForm.css */
+label {
+    color: #f0f0f0;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    color: var(--primary-color);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+    font-weight: 700;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: white;
+    border-radius: .4em;
+    cursor: pointer;
+    width: 18em;
+}
+
+
+.dropdown-arrow {
+    margin-left: 10px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 94%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 18em;
+    overflow-y: auto;
+}
+
+
+
+
+.value {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 1.2em;
+}
+
+.dropdown-item {
+    color: var(--primary-color);
+    padding: 0.5em 1em;
+    border: 1px solid #ecebeb;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+li {
+    margin: 0;
+}
+
+.dropdown-menu li {
+    color: var(--primary-color);
+    padding: 0.5em 1em;
+    border: 1px solid #ecebeb;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-btn.selected {
+    background-color: var(--primary-color);
+    color: #f8f8f8;
+    font-weight: 700;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.4);
+
+}
+
+.reserve-btn {
+    display: flex;
+    margin: 2em auto;
+    position: relative;
+}
+
+.error {
+    color: #eb7878;
+}
+
+.react-datepicker {
+    display: grid !important;
+    border: none !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: 0px;
+    opacity: 0;
+}
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
+    position: relative;
+    padding-left: 2em;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    /* color: #666; */
+}
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--primary-color);
+    border-radius: 100%;
+    background: #fff;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.Field {
+    display: grid;
+    position: relative;
+}
+
+.FieldError {
+    color: #eb7878;
+    position: absolute;
+    top: 7em;
+}
+
+input {
+    border: none;
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--primary-color);
+    opacity: 0.6;
+}
