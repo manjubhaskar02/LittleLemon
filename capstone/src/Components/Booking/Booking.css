@@ -218,3 +218,29 @@ input::placeholder {
     color: var(--primary-color);
     opacity: 0.6;
 }
+
+@media (max-width: 1050px) {
+    .form {
+        padding: var(--padding-sm);
+    }
+
+    .form-input {
+        padding: 3em 0em;
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        gap: 2rem 8rem;
+        place-content: center;
+
+
+    }
+
+
+
+}
+
+@media (max-width: 500px) {
+    .dropdown-btn {
+        width: 14em;
+    }
+
+}

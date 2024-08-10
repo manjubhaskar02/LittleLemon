@@ -18,6 +18,19 @@
 
 }
 
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: var(--primary-color) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
 @media (max-width: 1050px) {
 
 

@@ -12,7 +12,7 @@ function Herosection() {
 
     return (
         <>
-            <div className="hero-section">
+            <section className="hero-section">
                 <div className=""></div>
                 <div className="hero-content">
                     <div className="text-content">
@@ -27,7 +27,7 @@ function Herosection() {
                         <img src={HeroImage} alt="Hero" width={"500"} height={500} className="hero-image" />
                     </div>
                 </div>
-            </div>
+            </section>
 
         </>
     )

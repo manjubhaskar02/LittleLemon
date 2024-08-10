@@ -1,0 +1,58 @@
+.cart-page {
+
+    padding: var(--padding-lg);
+    position: relative;
+    background: url('../../images/BruschettaP.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    color: #f0f0f0;
+}
+
+.cart-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+
+.cart {
+    display: grid;
+    place-items: center;
+}
+
+.empty-msg {
+    padding-block: 1em;
+    text-align: center;
+}
+
+.cart-page h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.cart ul {
+    list-style-type: none;
+    padding: 2em;
+}
+
+.cart li {
+    margin-bottom: 10px;
+}
+
+@media(max-width:500px) {
+    .cart-page {
+
+        padding: var(--padding-sm);
+    }
+
+    .cart-page h2 {
+        font-size: 2.4em;
+    }
+
+}

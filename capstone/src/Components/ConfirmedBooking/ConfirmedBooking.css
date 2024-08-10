@@ -10,7 +10,6 @@
 .confirm-booking::before {
     content: '';
     position: absolute;
-
     top: 0;
     left: 0;
     right: 0;
@@ -18,16 +17,11 @@
     background-color: rgba(0, 0, 0, 0.6);
     background-color: rgba(73, 94, 87, 0.6);
 
-    /* background-color: rgba(73, 94, 87, 0.6); */
-    /* filter: blur(8px); */
-
-    /* z-index: 1; */
 }
 
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.6);
-    margin: 2em;
     padding: 2em;
     border-radius: .4em;
     z-index: 2;
@@ -37,17 +31,17 @@
 .confirm-booking h2 {
     position: relative;
     color: var(--secondary-color);
-    /* z-index: 2; */
+    margin-bottom: 1em;
 }
 
 .booking-data {
     display: grid;
     place-items: center;
     color: #fcfcfc;
-    font-size: 1.2em;
 }
 
 .list-items {
+    font-size: 1.2em;
     margin-top: 2em;
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -60,6 +54,7 @@ li {
 }
 
 .seating {
+    font-size: 1.2em;
     text-align: center;
     padding: 2em 2em 0;
 }
@@ -69,13 +64,58 @@ li {
     position: relative;
     font-size: 2em;
     text-align: center;
-    /* background-color: #fcfcfc; */
     background-color: rgba(73, 94, 87, 0.6);
-    /* background-color: rgba(0, 0, 0, 0.6); */
-
     padding: 2em;
     border-radius: 10px;
-    /* z-index: 2; */
+}
+
+.back-btn {
+    margin: 2em;
+    background-color: var(--primary-color);
+    color: white;
+
+}
+
+.back-btn:hover {
+    margin: 2em;
+    color: black;
+    background-color: var(--secondary-color);
+}
+
+
+
+@media (max-width:1050px) {
+    .confirm-booking {
+        padding: var(--padding-sm);
+    }
+
+    .success-message {
+        font-size: 1.6em;
+    }
+
+}
+
+@media (max-width:500px) {
+    .confirm-booking {
+        padding: var(--padding-sm);
+    }
+
+    .overlay {
+        padding: 1em;
+    }
+
+
+    .list-items {
+        gap: 2.5em 2em;
+        font-size: 1em;
+    }
+
+    .success-message {
+        font-size: 1.2em;
+        padding: 1.2em;
+    }
+
+
 
 
 }

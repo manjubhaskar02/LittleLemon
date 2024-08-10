@@ -18,36 +18,24 @@ function FormInput({ onFormSubmit }) {
     const validateFields = () => {
         if (!firstName.value.trim()) {
             setFirstName({ ...firstName, isTouched: true });
-            setErrorMessage("First name is required.");
             return false;
         }
         if (!lastName.value.trim()) {
             setLastName({ ...lastName, isTouched: true });
-            setErrorMessage("Last name is required.");
             return false;
         }
         if (!validateEmail(email.value)) {
             setEmail({ ...email, isTouched: true });
-            setErrorMessage("Invalid email address.");
             return false;
         }
         if (!validatePhone(phoneNum.value)) {
             setPhoneNum({ ...phoneNum, isTouched: true });
-            setErrorMessage("Invalid phone number.");
             return false;
         }
         return true;
     };
 
 
-    // const getIsFormValid = () => {
-    //     return (
-    //         firstName.value.trim() &&
-    //         lastName.value.trim() &&
-    //         validateEmail(email) &&
-    //         validatePhone(phoneNum)
-    //     );
-    // };
 
     const clearForm = () => {
         setFirstName({ value: "", isTouched: false, });
@@ -87,11 +75,9 @@ function FormInput({ onFormSubmit }) {
                         placeholder="First name"
                     />
                     {firstName.isTouched && firstName.value.length < 2 ? (
-                        <ErrorMessage message="First name must be at least 2 characters." />
+                        <ErrorMessage className="error" message="First name must be at least 2 characters." />
                     ) : null}
-                    {/* {firstName.isTouched && firstName.value.length < 2 ? (
-                        <ErrorMessage />
-                    ) : null} */}
+
                 </div>
                 <div className="Field">
                     <label>Last name  <sup>*</sup>
@@ -151,7 +137,7 @@ function FormInput({ onFormSubmit }) {
                 </div>
                 {errorMessage && <ErrorMessage message={errorMessage} />}
             </div>
-            <button className='btn reserve-btn' type="submit"  >Confirm Reservation</button>
+            <button className='btn reserve-btn' type="submit"  >Confirm</button>
 
         </form>
     )

@@ -47,6 +47,7 @@ a:active {
 .hamburger {
     display: none;
     cursor: pointer;
+    color: var(--primary-color);
 }
 
 li {
@@ -54,8 +55,16 @@ li {
     margin: 0.5em 0em;
 }
 
-
 @media (max-width: 1050px) {
+    .header {
+        padding: var(--padding-sm);
+        gap: 2em;
+
+    }
+
+}
+
+@media (max-width: 800px) {
     .nav-list {
         display: none;
         flex-direction: column;
@@ -63,24 +72,27 @@ li {
         top: 6.5em;
         right: 0;
         width: 30%;
-        background-color: var(--orange-color);
         padding: 1em;
         gap: 1em;
+        background: linear-gradient(135deg, #D5CABD, #EDE7D9);
+        border-radius: 0 0 0 .4em;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
 
     .nav-open .nav-list {
         display: flex;
+        z-index: 3;
     }
 
     .header {
-        display: flex;
+        display: block;
         padding: var(--padding-sm);
     }
 
 
     .hamburger {
         display: block;
-        font-size: 2em;
+        font-size: 1.6em;
     }
 
     .flex {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import "./Booking.css";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -8,7 +7,6 @@ import { addDays } from 'date-fns';
 
 
 const BookingForm = ({ availableTimes = [], dispatch, submitForm }) => {
-    // const [date, setDate] = useState(null);
     const [date, setDate] = useState(localStorage.getItem('date') ? new Date(localStorage.getItem('date')) : null);
     const [time, setTime] = useState(localStorage.getItem('time') || '');
     const [guests, setGuests] = useState(localStorage.getItem('guests') || '');
@@ -16,7 +14,6 @@ const BookingForm = ({ availableTimes = [], dispatch, submitForm }) => {
     const [seating, setSeating] = useState(localStorage.getItem('seating') || 'Indoor');
 
     const [errors, setErrors] = useState({});
-    const navigate = useNavigate();
     const [dropdownOpen, setDropdownOpen] = useState({
         date: false,
         time: false,

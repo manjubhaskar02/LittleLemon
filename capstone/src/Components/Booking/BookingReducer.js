@@ -1,5 +1,4 @@
 
-// import { fetchAPI } from './api'; // Ensure this path is correct
 import { fetchAPI } from "./BookingAPI";
 
 const initialTimes = fetchAPI(new Date()); // Initialize times for today

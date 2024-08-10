@@ -1,8 +1,10 @@
 import React from "react";
 import { FaMotorcycle } from "react-icons/fa";
-import "./Card.css"
+import "./Card.css";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ title, description, imageSrc, amount }) => {
+    const navigate = useNavigate();
     return (
         <>
             <div className="card">
@@ -14,7 +16,9 @@ const Card = ({ title, description, imageSrc, amount }) => {
                     </div>
                     <p className="ellipsis-paragraph">{description}</p>
                     <div className="">
-                        <button href="#" className="order- btn">
+                        <button href="#" className="order- btn"
+                            onClick={() => navigate('/LittleLemon/order')}
+                        >
                             Order a Delivery
 
                             <span className="" > <FaMotorcycle />

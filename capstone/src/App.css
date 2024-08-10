@@ -31,6 +31,7 @@ body {
   position: relative;
 }
 
+
 h2 {
   font-size: 3em;
   font-family: var(--markazi-text);
@@ -59,11 +60,16 @@ h4 {
   padding: 0.8em 1.2em;
   font-weight: 700;
   font-size: 1.2em;
-  margin: 2em 0em;
+  margin-block: 2em;
   cursor: pointer;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease;
 
+}
+
+.auto {
+  margin: 3em auto;
+  display: flex;
 }
 
 .btn:hover {
@@ -72,19 +78,3 @@ h4 {
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
 
 }
-
-/* .btn {
-  background-color: #495E57;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease;
-} */
-
-/* .btn:hover {
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
-} */

@@ -3,12 +3,14 @@ import "./ConfirmedBooking.css";
 import { FaCalendarAlt, FaClock, FaUserFriends, FaWineGlassAlt } from 'react-icons/fa';
 import FormInput from '../Booking/FormInput';
 import Display from '../Display/Display';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function ConfirmedBooking() {
 
+    const navigate = useNavigate();
 
     const [bookingData, setBookingData] = useState(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -32,6 +34,7 @@ function ConfirmedBooking() {
 
     return (
         <>
+
             <section className="confirm-booking">
 
                 <h2>Confirm Booking </h2>
@@ -51,6 +54,8 @@ function ConfirmedBooking() {
                                     <li> {<FaWineGlassAlt />}<span>{bookingData.occasion}</span></li>
                                 </ul>
                                 <p className='seating'>{bookingData.seating}{" Seating"}</p>
+                                <button className='btn back-btn' onClick={() => navigate('/LittleLemon/booking')}>Back to Reservation Table </button>
+
                             </div>
 
                         ) : (

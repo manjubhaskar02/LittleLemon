@@ -8,6 +8,10 @@ import React, { useReducer } from 'react';
 import ConfirmedBooking from './Components/ConfirmedBooking/Confirmedbooking';
 import { fetchAPI, submitAPI } from './Components/Booking/BookingAPI';
 import Login from './Components/Login';
+import OrderPage from './Components/Homepage/OrderPage';
+import Menu from './Components/Homepage/Menu';
+import About from './Components/Homepage/About';
+import CartPage from './Components/Homepage/CartPage';
 const initializeTimes = () => fetchAPI(new Date());
 
 const updateTimes = (state, action) => {
@@ -39,6 +43,13 @@ const Main = () => {
         <Route path="/LittleLemon/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
         <Route path="/LittleLemon/confirmed" element={<ConfirmedBooking />} />
         <Route path='/LittleLemon/form' element={<Login />} />
+        <Route path='/LittleLemon/order' element={<OrderPage />} />
+        <Route path='/LittleLemon/menu' element={<Menu />} />
+        <Route path='/LittleLemon/about' element={<About />} />
+        <Route path="/LittleLemon/cart" element={<CartPage />} />
+
+
+
       </Routes>
       <Footer />
     </>

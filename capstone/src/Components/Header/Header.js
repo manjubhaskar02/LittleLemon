@@ -39,11 +39,12 @@ function Header() {
 
                     <ul className="nav-list">
                         <li><Link to="/LittleLemon">Home</Link></li>
+
                         <li>  <a href="#about" onClick={handleClick}>About</a></li>
 
                         <li> <a href="#menu" onClick={handleClick}>Menu</a></li>
                         <li><Link to="/LittleLemon/booking">Reservations</Link></li>
-                        <li><Link to="/LittleLemon">Order Online</Link></li>
+                        <li><Link to="/LittleLemon/order">Order Online</Link></li>
                         <li><Link to="/LittleLemon/form">Login</Link></li>
                     </ul>
                 </nav>
