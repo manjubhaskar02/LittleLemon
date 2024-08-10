@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './Components/Header/Header';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage';
 import Footer from './Components/Footer/Footer';
 import BookingPage from './Components/Booking/BookingPage';
