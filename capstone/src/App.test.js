@@ -1,79 +1,142 @@
-// import { render, screen } from '@testing-library/react';
-// import App from './App';
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-import { fireEvent, render, screen } from "@testing-library/react";
-import BookingForm from "./Components/Booking/BookingForm";
-import { initializeTimes, initialTimes, updateTimes } from "./Components/Booking/BookingReducer";
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import FormInput from './Components/Booking/FormInput';
+import BookingForm from './Components/Booking/BookingForm';
+describe('FormInput Component', () => {
+  const mockOnFormSubmit = jest.fn();
 
-describe("BookingForm Component", () => {
-  test("renders static text 'Reserve a Table'", () => {
-    const availableTimes = [
-      '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00'
-    ];;
-    const dispatch = jest.fn();
-    render(<BookingForm availableTimes={availableTimes} dispatch={dispatch} />);
+  it('should show error message if first name is less than 2 characters', () => {
+    render(<FormInput onFormSubmit={mockOnFormSubmit} />);
 
-    const headingElement = screen.getByText("Reserve a Table");
-    expect(headingElement).toBeInTheDocument();
+    const firstNameInput = screen.getByPlaceholderText('First name');
+    fireEvent.change(firstNameInput, { target: { value: 'A' } });
+    fireEvent.blur(firstNameInput);
+
+    expect(screen.getByText('First name must be at least 2 characters.')).toBeInTheDocument();
+  });
+
+  it('should show error message if last name is less than 2 characters', () => {
+    render(<FormInput onFormSubmit={mockOnFormSubmit} />);
+
+    const lastNameInput = screen.getByPlaceholderText('Last name');
+    fireEvent.change(lastNameInput, { target: { value: 'B' } });
+    fireEvent.blur(lastNameInput);
+
+    expect(screen.getByText('Last name must be at least 2 characters.')).toBeInTheDocument();
+  });
+
+  it('should show error message if email is invalid', () => {
+    render(<FormInput onFormSubmit={mockOnFormSubmit} />);
+
+    const emailInput = screen.getByPlaceholderText('Email address');
+    fireEvent.change(emailInput, { target: { value: 'invalid-email' } });
+    fireEvent.blur(emailInput);
+
+    expect(screen.getByText('Invalid email address.')).toBeInTheDocument();
+  });
+
+  it('should show error message if phone number is invalid', () => {
+    render(<FormInput onFormSubmit={mockOnFormSubmit} />);
+
+    const phoneInput = screen.getByPlaceholderText('Phone No:');
+    fireEvent.change(phoneInput, { target: { value: '123' } });
+    fireEvent.blur(phoneInput);
+
+    expect(screen.getByText('Invalid phone number.')).toBeInTheDocument();
+  });
+
+  it('should call onFormSubmit when all fields are valid', () => {
+    render(<FormInput onFormSubmit={mockOnFormSubmit} />);
+
+    const firstNameInput = screen.getByPlaceholderText('First name');
+    const lastNameInput = screen.getByPlaceholderText('Last name');
+    const emailInput = screen.getByPlaceholderText('Email address');
+    const phoneInput = screen.getByPlaceholderText('Phone No:');
+
+    fireEvent.change(firstNameInput, { target: { value: 'John' } });
+    fireEvent.change(lastNameInput, { target: { value: 'Doe' } });
+    fireEvent.change(emailInput, { target: { value: 'john.doe@example.com' } });
+    fireEvent.change(phoneInput, { target: { value: '1234567890' } });
+
+    fireEvent.submit(screen.getByRole('button', { name: /confirm/i }));
+
+    expect(mockOnFormSubmit).toHaveBeenCalledTimes(1);
+  });
+
+  it('should clear the form on successful submit', () => {
+    render(<FormInput onFormSubmit={mockOnFormSubmit} />);
+
+    const firstNameInput = screen.getByPlaceholderText('First name');
+    const lastNameInput = screen.getByPlaceholderText('Last name');
+    const emailInput = screen.getByPlaceholderText('Email address');
+    const phoneInput = screen.getByPlaceholderText('Phone No:');
+
+    fireEvent.change(firstNameInput, { target: { value: 'John' } });
+    fireEvent.change(lastNameInput, { target: { value: 'Doe' } });
+    fireEvent.change(emailInput, { target: { value: 'john.doe@example.com' } });
+    fireEvent.change(phoneInput, { target: { value: '1234567890' } });
+
+    fireEvent.submit(screen.getByRole('button', { name: /confirm/i }));
+
+    expect(firstNameInput.value).toBe('');
+    expect(lastNameInput.value).toBe('');
+    expect(emailInput.value).toBe('');
+    expect(phoneInput.value).toBe('');
   });
 });
 
-// import React from 'react';
-// import { render, screen } from '@testing-library/react';
-// import BookingForm from './BookingForm';
 
-// test('renders BookingForm with static text', () => {
-//     // Mock the dispatch function
-//     const mockDispatch = jest.fn();
+describe('BookingForm', () => {
+  const mockOnSubmit = jest.fn();
+  const mockAvailableTimes = ['12:00 PM', '1:00 PM', '2:00 PM'];
 
-//     render(<BookingForm availableTimes={["12:00 PM", "1:00 PM"]} dispatch={mockDispatch} />);
-
-//     // Check for static text
-//     expect(screen.getByText("Date")).toBeInTheDocument();
-//     expect(screen.getByText("Time")).toBeInTheDocument();
-//     expect(screen.getByText("Number of Guests")).toBeInTheDocument();
-//     expect(screen.getByText("Occasion")).toBeInTheDocument();
-
-//     // Check if the select element contains the available times
-//     expect(screen.getByText("12:00 PM")).toBeInTheDocument();
-//     expect(screen.getByText("1:00 PM")).toBeInTheDocument();
-// });
-
-// describe("Booking Reducer Functions", () => {
-//   test("initializeTimes returns the correct initial times", () => {
-//     const initialTimes = initializeTimes();
-//     expect(initialTimes).toEqual(["18:00", "19:00", "20:00"]);
-//   });
-
-//   test("updateTimes returns the same value provided in the action payload", () => {
-//     const state = ["18:00", "19:00", "20:00"];
-//     const action = { type: 'update', payload: ["17:00", "18:30", "19:30"] };
-//     const updatedTimes = updateTimes(state, action);
-//     expect(updatedTimes).toEqual(["17:00", "18:30", "19:30"]);
-//   });
-
-//   test("updateTimes returns the current state if action type is unknown", () => {
-//     const state = ["18:00", "19:00", "20:00"];
-//     const action = { type: 'unknown', payload: ["17:00", "18:30", "19:30"] };
-//     const updatedTimes = updateTimes(state, action);
-//     expect(updatedTimes).toEqual(state);
-//   });
-// });
-describe('BookingReducer', () => {
-  test('initializeTimes returns the correct initial times', () => {
-    const result = initializeTimes();
-    expect(result).toEqual(initialTimes);
+  beforeEach(() => {
+    render(<BookingForm onSubmit={mockOnSubmit} availableTimes={mockAvailableTimes} />);
   });
 
-  test('updateTimes returns the same value that is provided in the state', () => {
-    const state = ['17:00', '17:30'];
-    const action = { type: 'UPDATE_TIMES' };
-    const result = updateTimes(state, action);
-    expect(result).toEqual(initialTimes); // This is the current logic. Adjust accordingly when the logic changes.
+  it('should allow the user to select Indoor seating', () => {
+    const indoorRadio = screen.getByLabelText('Indoor Seating');
+    fireEvent.click(indoorRadio);
+    expect(indoorRadio).toBeChecked();
   });
+
+  it('should allow the user to select Outdoor seating', () => {
+    const outdoorRadio = screen.getByLabelText('Outdoor Seating');
+    fireEvent.click(outdoorRadio);
+    expect(outdoorRadio).toBeChecked();
+  });
+
+  it('should display the date picker when the date dropdown is clicked', () => {
+    const dateDropdown = screen.getByText('Select Date');
+    fireEvent.click(dateDropdown);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
+  it('should allow the user to select a time from the dropdown', () => {
+    const timeDropdown = screen.getByText('Select Time');
+    fireEvent.click(timeDropdown);
+    const timeOption = screen.getByText(mockAvailableTimes[0]);
+    fireEvent.click(timeOption);
+    expect(screen.getByText(mockAvailableTimes[0])).toBeInTheDocument();
+  });
+
+  it('should allow the user to select the number of diners', () => {
+    const guestsDropdown = screen.getByText('No: of Diner');
+    fireEvent.click(guestsDropdown);
+    const guestsOption = screen.getByText('3 Diners');
+    fireEvent.click(guestsOption);
+    expect(screen.getByText('3 Diners')).toBeInTheDocument();
+  });
+
+  it('should allow the user to select an occasion', () => {
+    const occasionDropdown = screen.getByText('Select Occasion');
+    fireEvent.click(occasionDropdown);
+    const occasionOption = screen.getByText('Birthday');
+    fireEvent.click(occasionOption);
+    expect(screen.getByText('Birthday')).toBeInTheDocument();
+  });
+
+
 });
